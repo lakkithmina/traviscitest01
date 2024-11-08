@@ -1,0 +1,238 @@
+{
+	"info": {
+		"_postman_id": "b9977abc-70ed-42f2-a978-9b129bc14792",
+		"name": "PACZCFW-1362",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26264218"
+	},
+	"item": [
+		{
+			"name": "Normal request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:{{PORT}}/{{ENDPOINT}}",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"{{ENDPOINT}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request with non-stream type attribute for $select",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:{{PORT}}/{{ENDPOINT}}?$select=DocNo",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"{{ENDPOINT}}"
+					],
+					"query": [
+						{
+							"key": "$select",
+							"value": "DocNo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request with stream type attribute for $select",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:{{PORT}}/{{ENDPOINT}}?$select=FileData",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"{{ENDPOINT}}"
+					],
+					"query": [
+						{
+							"key": "$select",
+							"value": "FileData"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request with stream type attribute for $select with $format option",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:{{PORT}}/{{ENDPOINT}}?$select=FileData&$format=application/json;odata.metadata=full",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"{{ENDPOINT}}"
+					],
+					"query": [
+						{
+							"key": "$select",
+							"value": "FileData"
+						},
+						{
+							"key": "$format",
+							"value": "application/json;odata.metadata=full"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request with stream type attribute for $select with Accept header",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json;odata.metadata=full",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{HOST}}:{{PORT}}/{{ENDPOINT}}?$select=FileData",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"{{ENDPOINT}}"
+					],
+					"query": [
+						{
+							"key": "$select",
+							"value": "FileData"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request with stream type attribute for $select with Accept header and $format option",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{HOST}}:{{PORT}}/{{ENDPOINT}}?$select=FileData&$format=application/json;odata.metadata=full",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"{{ENDPOINT}}"
+					],
+					"query": [
+						{
+							"key": "$select",
+							"value": "FileData"
+						},
+						{
+							"key": "$format",
+							"value": "application/json;odata.metadata=full"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request with non-stream type attribute for $orderby",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:{{PORT}}/{{ENDPOINT}}?$orderby=DocNo",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"{{ENDPOINT}}"
+					],
+					"query": [
+						{
+							"key": "$orderby",
+							"value": "DocNo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request with stream type attribute for $orderby",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:{{PORT}}/{{ENDPOINT}}?$orderby=FileData",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"{{ENDPOINT}}"
+					],
+					"query": [
+						{
+							"key": "$orderby",
+							"value": "FileData"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "ENDPOINT",
+			"value": "int/ifsapplications/projection/v1/EdmFileStorageEntity.svc/EdmFileStorageSet"
+		},
+		{
+			"key": "HOST",
+			"value": "localhost"
+		},
+		{
+			"key": "PORT",
+			"value": "8080"
+		}
+	]
+}
